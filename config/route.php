@@ -13,6 +13,15 @@
  */
 
 use Webman\Route;
+use support\Request;
+
+Route::disableDefaultRoute();
+
+Route::any('/test', function (Request $request) {
+    return response('test');
+});
+
+Route::any('/test2',[app\controller\UserController::class,'hello']);
 
 
 
